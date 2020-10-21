@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie-Reviews</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Review</h1>
+        {{>header}}
+        <hr>
+        <h2>Search a movie Review!</h2>
+        <br>
+        {{!-- ----- movie input row start ----- --}}
+        <div class="row">
+                <div class="col-6">
+                <form action="">
+                    <div class="form-group">
+                        <label for="Enter name of  the movie">Enter name of  the movie</label>
+                        <input type="email" class="form-control" id="movie-input" aria-describedby="emailHelp" placeholder="The Dark Knight">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <button type="submit" id="search-submit" class="btn btn-primary mb-2">Search!</button>
+                </div>
+                </form>
+        </div>
+        {{!-- --------- movie input row end ------ --}}
+
+    </div>
+    
+</body>
+</html>
