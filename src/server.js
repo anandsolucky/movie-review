@@ -3,6 +3,7 @@ const hbs = require('hbs');
 const path = require('path');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
+const reviewModel = require('../models/review')
 
 const partialsPath = path.join(__dirname,"../templates/partials");
 const viewsPath = path.join(__dirname,"../templates/views");
@@ -34,6 +35,11 @@ app.get('/about', (req, res)=> {
 
 app.get('/review', (req, res)=> {
     res.render('review');
+})
+
+app.post('/review', (req, res)=> {
+    const params = req.body;
+    console.log("body received in server.js file: " + params);
 })
 
 app.get('/search', (req, res)=> {

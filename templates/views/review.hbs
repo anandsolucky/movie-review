@@ -12,7 +12,7 @@
         <hr>
         <h2>Write a Review!</h2>
 
-    <form>
+    <form id="review-form">
         <div class="form-row">
             <div class="form-group col-md-6">
             <label for="inputEmail4">Movie Name</label>
@@ -26,11 +26,11 @@
         <div class="form-row">
             <div class="form-group col-md-6">
             <label for="inputCity">Review Title</label>
-            <input type="text" class="form-control" id="inputCity">
+            <input type="text" class="form-control" id="title-input">
             </div>
             <div class="form-group col-md-4">
             <label for="inputState">Genre</label>
-            <select id="inputState" class="form-control">
+            <select  class="form-control" id="genre-input">
                 <option selected>Drama</option>
                 <option>Action</option>
                 <option>Adventure</option>
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group col-md-2">
                 <label for="inputState">Rating</label>
-                <select id="inputState" class="form-control">
+                <select id="rating-input" class="form-control">
                     <option selected>1 - Bad</option>
                     <option>2 - Average</option>
                     <option>3 - Good</option>
@@ -51,7 +51,7 @@
         </div>  
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Write you full review</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" id="detail-input" rows="3"></textarea>
         </div>
         
         <button type="submit" class="btn btn-primary">Sign in</button>
