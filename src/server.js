@@ -4,6 +4,7 @@ const path = require('path');
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 const reviewModel = require('../models/review')
+const chalk = require('chalk');
 
 const partialsPath = path.join(__dirname,"../templates/partials");
 const viewsPath = path.join(__dirname,"../templates/views");
@@ -37,9 +38,23 @@ app.get('/review', (req, res)=> {
     res.render('review');
 })
 
-app.post('/review', (req, res)=> {
+app.post('/review', async (req, res)=> {
     const params = req.body;
-    console.log("body received in server.js file: " + params);
+    const reviewData = {
+        movieName: params.movieName,
+        directedBy: params.director,
+        title: params.title,
+        genre: params.genre,
+        rating: params.rating,
+        content: params.detail,
+    }
+    const review = new reviewModel(reviewData);
+    try {
+        await review.save()
+        res.json({status: "success", msg: "DB data save success"});
+    } catch (error) {
+        res.json({status: "error", msg: "DB data save exception"});
+    }
 })
 
 app.get('/search', (req, res)=> {
